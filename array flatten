@@ -1,0 +1,28 @@
+//FLATTEN NESTED  ARRAY  chain
+
+ //nested array function
+ let arr =[["sa","As",[[["As",["AS","As"]]]]]]
+ 
+Array.prototype.myflatten=function()
+{
+
+let res=[];
+
+
+function check(a)
+{
+
+
+for(let i=0;i<a.length;i++)
+{
+if(Array.isArray(a[i]))
+      check(a[i]) 
+  else res.push(a[i]);
+}
+
+}
+ check(this)
+console.log(res) ;
+}
+ 
+ arr.myflatten();
