@@ -1,10 +1,11 @@
 CALL POLYFILL
- let obj ={
+ 
+  let obj ={
  name:"vipin",
  }
- function mymethod() 
+ function mymethod(a,b) 
     { 
-            console.log(this.name)
+            console.log(this.name,a,b)
      }
 
  let obj2={
@@ -18,10 +19,14 @@ mymethod.call(obj);
 
 let x=args[0];
 x.fn=this;
-x.fn();
+let a=args.slice(1)
+x.fn(a[0],a[1]);
 
 } 
- mymethod.mycall(obj2);
+ mymethod.mycall(obj2,"hfhfh","jjjf");
+ 
+ 
+ 
  
  
  
