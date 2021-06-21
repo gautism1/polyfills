@@ -1,0 +1,28 @@
+ //debounce
+ //normal call to function
+ function dosome()
+ {
+ console.log("hello buddy")
+ }
+ dosome();
+ 
+ //we hav to make better for function which do the same
+ 
+ function betterfn(fn,limit)
+ {
+ let timer
+ let context=this;
+ let args=arguments;
+ 
+ clearInterval(timer)
+ 
+ timer=setTimeout(()=>  fn.apply(context,args)  , limit)
+ 
+ }
+  
+ betterfn(dosome,3) 
+ betterfn(dosome,0); 
+ betterfn(dosome,3000); 
+ betterfn(dosome,3000);
+ betterfn(dosome,3000);
+ 
