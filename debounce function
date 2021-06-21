@@ -17,7 +17,7 @@
  let context=this;
 
  let args=arguments;
-  console.log(args[0])
+ // console.log(args[0])
  clearInterval(timer)
  
  timer=setTimeout(()=>  fn.apply(context,args)  , limit)
