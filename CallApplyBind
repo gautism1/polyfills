@@ -25,6 +25,36 @@ x.fn(a[0],a[1]);
 } 
  mymethod.mycall(obj2,"hfhfh","jjjf");
  
+ APPLY POLYFILL
+ 
+  let obj ={
+ name:"vipin",
+ }
+ function mymethod(...args) 
+    { 
+            console.log(this.name,args)
+     }
+
+let obj2={
+ name:"hello"
+ }
+ 
+ mymethod.apply(obj,["gattu","battu"]);
+ Function.prototype.myapply=function(...args)
+{
+
+ 
+let x=args[0];
+ 
+x.fn=this;
+let a=args[1]
+ 
+x.fn(...a);
+
+} 
+ mymethod.myapply(obj,["hfhfh","jjjf"]);
+ 
+ 
  
  
  
