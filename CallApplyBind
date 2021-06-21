@@ -57,6 +57,37 @@ x.fn(...a);
  
  
  
+ BINCD POLYFILLL
+  let obj ={
+ name:"vipin",
+ }
  
+ function mymethod(...args) 
+    { 
+            console.log(this.name,args)
+     }
+ 
+let as= mymethod.bind(obj,"gattu","battu");
+ as("sdsds");
+ 
+ Function.prototype.myBind=function(...args)
+ {
+ 
+  let x=args[0];
+ let z=this;
+ x.fn=this;
+ let a=args.slice(1);
+ return function(...args2)
+ {
+//    x.apply(z,["asa","Asasa"]) ;                                  //also we can use apply here
+  
+  
+  x.fn(...a,args2);
+
+ }
+ 
+ } 
+ let ac=mymethod.myBind(obj,"hfhfh","jjjf");
+ ac("asa");
  
  
