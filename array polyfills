@@ -100,3 +100,31 @@ function fn(x) {
        
       }
        console.log(arr.myfilter(fn))
+
+REDUCE POLTFILL
+
+let arr = [1, 2, 3, 2, 1, 3];
+/* 
+let x=arr.reduce((acc,item,index,arr) =>
+           acc+item,
+           0
+      );
+      console.log(x) */
+      
+      Array.prototype.myReduce = function(callback) 
+      {
+      let res=[];
+      let acc=0;
+        for (let i = 0; i < this.length; i++)
+         {
+         acc=callback(acc,this[i],i,this);
+           
+          }
+       return res;
+      };
+      
+      function fn(acc,x) {
+       return acc+x
+       
+      }
+       console.log(arr.myReduce(fn))
