@@ -1,0 +1,27 @@
+CALL POLYFILL
+ let obj ={
+ name:"vipin",
+ }
+ function mymethod() 
+    { 
+            console.log(this.name)
+     }
+
+ let obj2={
+ name:"hello"
+ }
+ 
+mymethod.call(obj);
+ 
+ Function.prototype.mycall=function(...args)
+{
+
+let x=args[0];
+x.fn=this;
+x.fn();
+
+} 
+ mymethod.mycall(obj2);
+ 
+ 
+ 
