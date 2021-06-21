@@ -1,0 +1,36 @@
+//THROTLE
+//FUNCTION
+
+
+ //normal call to function
+ function dosome()
+ {
+ console.log("hello buddy")
+ }
+ dosome();
+ 
+ //we hav to make better for function which do the same
+ 
+ 
+ function throttled(fn,limit)
+ {
+ var flag=true;
+ let timer;
+ return function()
+ {
+ 
+ let context=this;
+
+ let args=arguments;
+ if(flag)
+ {
+ fn();
+ flag=false;
+ timer=setTimeout(()=>
+       flag=true, limit)
+ }
+ }
+ }
+  
+ throttled(dosome,3)("ss")
+ 
