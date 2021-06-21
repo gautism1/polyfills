@@ -72,3 +72,31 @@ function fn(x) {
        return true;
       }
        console.log(arr.myfind(fn))
+       
+       FILTER POLYFILLL
+       let arr = [1, 2, 3, 2, 1, 3];
+
+/* let x=arr.filter((item,index) =>
+           item>2
+      );
+      console.log(x);
+       */
+      Array.prototype.myfilter = function(callback) 
+      {
+      let res=[];
+      let a=0;
+        for (let i = 0; i < this.length; i++)
+         {
+          if(callback(this[i]))
+            {res[a]= this[i];a++
+            }
+          }
+       return res;
+      };
+      
+      function fn(x) {
+       if(x>2)
+       return true;
+       
+      }
+       console.log(arr.myfilter(fn))
