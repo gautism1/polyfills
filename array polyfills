@@ -1,0 +1,23 @@
+let arr = [1, 2, 3, 2, 1, 3];
+
+// let x = arr.map((item) =>
+//   item * 2
+// );
+// console.log(x);
+
+Array.prototype.mymap = function(callback) 
+{
+  var res = []
+
+  for (let i = 0; i < this.length; i++)
+   {
+    res[i] = callback(this[i]);
+    }
+
+  return res;
+};
+
+function fn(x) {
+  return x * 2;
+}
+console.log(arr.mymap((item)=>item*2))
